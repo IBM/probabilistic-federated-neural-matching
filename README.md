@@ -3,8 +3,9 @@
 
 This is the code accompanying the ICML 2019 paper "Bayesian Nonparametric Federated Learning of Neural Networks"
 
-##### Requirements to run the code:
+#### Requirements to run the code:
 ---
+
 1. Python 3.6
 2. PyTorch 0.4
 3. Scikit-learn
@@ -12,7 +13,7 @@ This is the code accompanying the ICML 2019 paper "Bayesian Nonparametric Federa
 5. Numpy
 
 
-##### Important source files:
+#### Important source files:
 ---
 
 1. `experiment.py`: Main entryway to the code. Used to run all experiments
@@ -20,18 +21,21 @@ This is the code accompanying the ICML 2019 paper "Bayesian Nonparametric Federa
 3. `matching/pfnm_communication.py`: Contains the PFNM matching code for multiple communication federated learning
 
 
-##### Sample Commands:
+#### Sample Commands:
 ---
 
 1. MNIST Heterogenous 10 batches
-    ```python experiment.py --logdir "logs/mnist_test" --dataset "mnist" --datadir "data/mnist/" --net_config "784, 100, 10" --n_nets 10 --partition "hetero-dir" --experiment "u-ensemble,pdm,pdm_iterative" --lr 0.01 --epochs 10 --reg 1e-6 --communication_rounds 5 --lr_decay 0.99 --iter_epochs 5```
+
+`python experiment.py --logdir "logs/mnist_test" --dataset "mnist" --datadir "data/mnist/" --net_config "784, 100, 10" --n_nets 10 --partition "hetero-dir" --experiment "u-ensemble,pdm,pdm_iterative" --lr 0.01 --epochs 10 --reg 1e-6 --communication_rounds 5 --lr_decay 0.99 --iter_epochs 5`
 
 2. CIFAR-10 Heterogenous 10 batches
-    `python experiment.py --logdir "logs/cifar10_test" --dataset "cifar10" --datadir "data/cifar10/" --net_config "3072, 100, 10" --n_nets 10 --partition "hetero-dir" --experiment "u-ensemble,pdm,pdm_iterative" --lr 0.001 --epochs 10 --reg 1e-5 --communication_rounds 5 --lr_decay 0.99 --iter_epochs 5`
+    
+`python experiment.py --logdir "logs/cifar10_test" --dataset "cifar10" --datadir "data/cifar10/" --net_config "3072, 100, 10" --n_nets 10 --partition "hetero-dir" --experiment "u-ensemble,pdm,pdm_iterative" --lr 0.001 --epochs 10 --reg 1e-5 --communication_rounds 5 --lr_decay 0.99 --iter_epochs 5`
 
 
 ##### Important arguments:
 ---
+
 
 The following arguments to the PFNM file control the important parameters of the experiment
 
