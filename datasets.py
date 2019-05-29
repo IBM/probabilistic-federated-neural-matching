@@ -20,12 +20,8 @@ class MNIST_truncated(data.Dataset):
 
 		mnist_dataobj = MNIST(self.root, self.train, self.transform, self.target_transform, self.download)
 
-		if self.train:
-			data = mnist_dataobj.train_data
-			target = mnist_dataobj.train_labels
-		else:
-			data = mnist_dataobj.test_data
-			target = mnist_dataobj.test_labels
+		data = mnist_dataobj.data
+		target = mnist_dataobj.targets
 
 		if self.dataidxs is not None:
 			data = data[self.dataidxs]
@@ -76,12 +72,8 @@ class CIFAR10_truncated(data.Dataset):
 
 		cifar_dataobj = CIFAR10(self.root, self.train, self.transform, self.target_transform, self.download)
 
-		if self.train:
-			data = cifar_dataobj.train_data
-			target = np.array(cifar_dataobj.train_labels)
-		else:
-			data = cifar_dataobj.test_data
-			target = np.array(cifar_dataobj.test_labels)
+		data = np.array(cifar_dataobj.data)
+		target = np.array(cifar_dataobj.targets)
 
 		if self.dataidxs is not None:
 			data = data[self.dataidxs]

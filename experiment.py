@@ -119,7 +119,7 @@ def partition_data(dataset, datadir, logdir, partition, n_nets, alpha=0.5):
 		X_train, y_train, X_test, y_test = load_mnist_data(datadir)
 	elif dataset == 'cifar10':
 		X_train, y_train, X_test, y_test = load_cifar10_data(datadir)
-
+	
 	n_train = X_train.shape[0]
 
 	if partition == "homo":
